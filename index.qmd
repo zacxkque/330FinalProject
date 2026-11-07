@@ -1,11 +1,10 @@
 ---
-title: "Replace with a specific, informative title"
-subtitle: "Replace with one sentence that tells readers why the question matters"
-author: "Replace with all group members' names"
+title: "Cholesterol in Fast Food"
+subtitle: "Understanding cholesterol levels in fast food to promote healthy lifestyles"
+author: "Jessi Hales, Katherine Michael, Zach Brown"
 date: last-modified
-description: "Replace with a brief description for link previews."
+description: "Includes links to a concise record of AI-supported work on this project."
 ---
-
 **Narrative word count:** Replace with a number from 750 to 1,000.
 
 ::: {.callout-tip}
@@ -14,14 +13,19 @@ This template suggests one way to tell the story. You may rename, combine, or re
 
 ## The question
 
-**In one or two short paragraphs, introduce the setting, audience, focused research question, data source, observational unit, response, important predictors, and one important data limitation. Lead with what makes the question worth answering.**
+Can we predict cholesterol accurately from other nutritional information and the restaurant a food comes from? Which nutrients are the most influential? Answering these questions will inform consumers of fast food and spread awareness on fast food health. Our response variable is cholesterol (mg), and some of the important candidate predictors include company, calories, total fat, saturated fat, sodium, carbs, fibers, sugars, and proteins.
 
 ## What the baseline shows
 
 **Describe and justify a simple course-based baseline regression model. Interpret the result that best establishes the rest of the story, including its direction, magnitude, scale, and uncertainty. Explain one limitation or unresolved pattern that motivates deeper analysis.**
 
 ```{r}
-# Load packages and data, document preparation, and fit the baseline.
+library(tidyverse)
+library(RKaggle)
+fastfood <- RKaggle::get_dataset("ulrikthygepedersen/fastfood-nutrition")
+fastfood_mod = lm(cholesterol ~ calories + cal_fat + total_fat + sat_fat + trans_fat + sodium + total_carb + fiber + sugar + protein, data=fastfood)
+
+summary(fastfood_mod)
 ```
 
 ```{r}
@@ -64,7 +68,7 @@ Details are in the [AI-use record](ai-use.qmd).
 
 ## Data and code
 
-- **Data:** Replace with a working source link or citation and any brief acquisition note needed to reproduce the project.
-- **Repository:** Replace with your repository URL.
+- **Data:** https://www.kaggle.com/datasets/ulrikthygepedersen/fastfood-nutrition?resource=download 
+- **Repository:** https://github.com/zacxkque/330FinalProject.git
 - [AI-use record](ai-use.qmd)
 - **Other sources:** Cite package documentation, articles, code, and other sources that materially informed the work.
