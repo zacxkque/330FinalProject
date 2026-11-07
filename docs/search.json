@@ -11,21 +11,21 @@
     "href": "ai-use.html#starting-point",
     "title": "AI Use and Verification",
     "section": "Starting point",
-    "text": "Starting point\nAI system and date: Replace.\nBefore using AI for the required extension, briefly state your question, course-based core model, baseline result, and the specific limitation or opportunity you wanted to address."
+    "text": "Starting point\nAI system and date: Gemini, Nov 6, 2026\nBefore using AI for the required extension, briefly state your question, course-based core model, baseline result, and the specific limitation or opportunity you wanted to address. Research Question: To what extent do nutritional components (total fat, saturated fat, trans fat, sodium, carbs, fiber, sugar, protein) and restaurant chain predict the cholesterol content in fast-food menu items?\nBaseline Model: Ordinary Least Squares (OLS) multiple linear regression predicting cholesterol from nutritional macronutrients and restaurant indicators.\nLimitation of Baseline: Linear regression assumes additive, straight-line relationships between nutrients and cholesterol. It struggles to capture non-linear patterns and complex multi-way interactions (for instance, the joint effect of high sodium and saturated fat on cholesterol within fried items versus grilled items)."
   },
   {
     "objectID": "ai-use.html#substantive-prompts",
     "href": "ai-use.html#substantive-prompts",
     "title": "AI Use and Verification",
     "section": "Substantive prompts",
-    "text": "Substantive prompts\nPaste the exact prompts that shaped the extension. Include the customized extension-selection prompt from the checkpoint and any important implementation follow-ups. Delete unused prompt blocks.\n\nReplace with an exact prompt.\n\n\nReplace with another exact prompt, if needed."
+    "text": "Substantive prompts\nPaste the exact prompts that shaped the extension. Include the customized extension-selection prompt from the checkpoint and any important implementation follow-ups. Delete unused prompt blocks.\n\nWe are analyzing a fast-food nutrition dataset to predict cholesterol using multiple linear regression with predictors like total fat, saturated fat, trans fat, sodium, carbs, sugars, protein, and restaurant brand. Our baseline model shows reasonable fit (\\(R^2\\)), but residual diagnostics suggest non-linearities and potential interaction effects that linear regression cannot easily capture. Propose an advanced beyond-course machine learning extension to compare against our baseline, provide the implementation steps, and explain how to evaluate it against the linear model."
   },
   {
     "objectID": "ai-use.html#my-decisions",
     "href": "ai-use.html#my-decisions",
     "title": "AI Use and Verification",
     "section": "My decisions",
-    "text": "My decisions\n\nAccepted: What useful advice did you use?\nChanged: What did you adapt to fit your data or goals?\nRejected or corrected: What advice was unsuitable, unnecessary, or wrong?\n\nConnection to the final case study: Identify where the extension’s method and result appear on the final page and how they strengthen the course-based analysis."
+    "text": "My decisions\n\nAccepted: We will use a Random Forest Regressor as a non-parametric benchmark to capture non-linearities and multi-nutrient interactions that linear models struggle with.\nChanged: We limited the predictors (total fat, saturated fat, trans fat, sodium, carbs, fiber, sugar, protein) and restaurant brand, rather than letting the AI include redundant items like total calories or item names.\nRejected or corrected: Rejected overly complex hyperparameter tuning suggestions\n\nConnection to the final case study: The Random Forest methods will be integrated into the Model Comparison and Advanced Analysis section of our final report, It will serve as a useful comparison to an OLS model. ## Independent verification\n\nCheck and result: 5-Fold Cross-Validation Metric Comparison: We will evaluate both the baseline linear regression and the Random Forest model using the exact same 5-fold cross-validation splits.\nCheck and result: We will plot predicted values versus residuals for the Random Forest to ensure residuals are randomly distributed around zero and do not display systematic bias."
   },
   {
     "objectID": "ai-use.html#independent-verification",
@@ -39,14 +39,14 @@
     "href": "ai-use.html#remaining-limitation",
     "title": "AI Use and Verification",
     "section": "Remaining limitation",
-    "text": "Remaining limitation\nState one important uncertainty, failure mode, or limitation that remains."
+    "text": "Remaining limitation\nState one important uncertainty, failure mode, or limitation that remains. While the Random Forest model may fit the line better, it will sacrifice the simplicity and easy interpretation of variable coefficients that show how just one predictor can affect the model."
   },
   {
     "objectID": "ai-use.html#other-ai-use-if-any",
     "href": "ai-use.html#other-ai-use-if-any",
     "title": "AI Use and Verification",
     "section": "Other AI use, if any",
-    "text": "Other AI use, if any\nBriefly disclose earlier debugging, proofreading, or other AI assistance. Write “None” if there was no other use."
+    "text": "Other AI use, if any\nWe heavily used AI to fix issues with setting up our github, as well as briefly asking it to clarify certain requirements on the project. Before our initial prompt, we asked for 5 different options that were beyond the scope of this class so that we could choose which best added to our model."
   },
   {
     "objectID": "index.html",
